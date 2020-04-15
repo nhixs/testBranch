@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      <head>
+<meta charset="utf-8">
+<title>Nusa Library</title>
+</head>
+<body>
+<div align="center">
+<h1>Book List</h1>
+<a href="/new"> Create New Product</a>
+<br/><br/>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>Book Id</th>
+<th>Name</th>
+<th>Edition</th>
+<th>Publisher</th>
+<th>Price</th>
+<th>Pages</th>
+<th>Bookshelf</th>
+</tr>
+</thead>
+<tr th:each="book : ${listBooks}" >
+<td th:text="${book.id}">Book Id</td>
+<td th:text="${book.name}">Name</td>
+<td th:text="${book.edition}">Edition</td>
+<td th:text="${book.publisher}">Publisher</td>
+<td th:text="${book.price}">Price</td>
+<td th:text="${book.pages}">Pages</td>
+<td th:text="${book.bookshelf}">Book Shelf</td>
+<td>
+<a th:href="@{'/editBook/'+${book.id}}">Edit</a>
+  &nbsp;&nbsp;&nbsp;
+  <a th:href="@{'/deleteBook/'+${book.id}}">Delete</a>
+</table>
+</div>
+</body>
+</html>

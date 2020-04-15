@@ -1,0 +1,21 @@
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>Book Id</th>
+<th>Name</th>
+<th>Edition</th>
+<th>Publisher</th>
+<th>Price</th>
+<th>Pages</th>
+<th>Bookshelf</th>
+</tr>
+</thead>
+<tr th:each="book : ${listBooks}" >
+<td th:text="${book.id}">Book Id</td>
+<td th:text="${book.name}">Name</td>
+<td th:text="${book.edition}">Edition</td>
+<td th:text="${book.publisher}">Publisher</td>
+<td th:text="${book.price}">Price</td>
+<td th:text="${book.pages}">Pages</td>
+<td th:text="${book.bookshelf}">Book Shelf</td>
+</table>
